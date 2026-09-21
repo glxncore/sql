@@ -1,0 +1,45 @@
+update customers set course= web devlpmnt,where course in (html,css) and place =!goa;
+
+select * from students where student id >5 
+place to ekrala,cours=java now stdnt in tvm or mlp
+update students set place = kerala where place in tvm,mlp and cours = java;
+
+delete from students where course =c++ and place =Punjab  or cpurse=djnago and place = Mumbai 
+.not from mbai and punai and cors  pyhtrn
+select * from students where 
+not c++ , stdd id desc and place asc
+
+seledct * from stdnt where course =! c++ order by desc stdid and 
+seldct stdname,course,age,place where place =! tvm and age >19 and cpurse in java,pythm orders by age .
+-- 1. Display students older than 20 studying either JAVA or C++,
+-- but not from Mumbai or Pune.
+SELECT * FROM students WHERE Age > 20 AND Course IN ('JAVA', 'C++') AND Place NOT IN ('Mumbai', 'Pune');
+
+-- 2. Display students from Chennai studying Python,
+-- Hyderabad studying JAVA, or Trivandrum studying C++.
+SELECT * FROM students WHERE (Place = 'Chennai' AND Course = 'Python') OR (Place = 'Hyderabad' AND Course = 'JAVA') OR (Place = 'Trivandrum' AND Course = 'C++');
+
+-- 3. Display students aged between 20 and 25, excluding Django students.
+SELECT * FROM students WHERE Age BETWEEN 20 AND 25 AND Course != 'Django';
+
+-- 4. Display different places of students older than 21, alphabetically.
+SELECT DISTINCT Place FROM students WHERE Age > 21 ORDER BY Place ASC;
+
+-- 5. Display StudentName, Age, and age after 10 years for students younger than 25.
+SELECT StudentName, Age, Age + 10 AS FutureAge FROM students WHERE Age < 25;
+
+-- 6. Sort all students first by Place alphabetically and then by Age from highest to lowest.
+SELECT * FROM students ORDER BY Place ASC, Age DESC;
+
+-- 7. Change Python or C++ students older than 20, except those from Chennai, to JavaScript.
+UPDATE students SET Course = 'JavaScript' WHERE Course IN ('Python', 'C++') AND Age > 20 AND Place != 'Chennai';
+
+-- 8. Delete Django students older than 21 OR C++ students from Panjab.
+DELETE FROM students WHERE (Course = 'Django' AND Age > 21) OR (Course = 'C++' AND Place = 'Panjab');
+
+-- 9. Display students aged 19–24 studying JAVA, Python, or C++, but not from Mumbai.
+SELECT * FROM students WHERE Age BETWEEN 19 AND 24 AND Course IN ('JAVA', 'Python', 'C++') AND Place != 'Mumbai';
+
+-- 10. Display different courses for students older than 19, from Chennai/Pune/Hyderabad,
+-- not studying Django, and not older than 30. Sort descending.
+SELECT DISTINCT Course FROM students WHERE Age > 19 AND Age <= 30 AND Place IN ('Chennai', 'Pune', 'Hyderabad') AND Course != 'Django' ORDER BY Course DESC;
